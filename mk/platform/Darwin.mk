@@ -1,4 +1,4 @@
-# $NetBSD: Darwin.mk,v 1.98 2020/08/21 21:29:16 sjmulder Exp $
+# $NetBSD: Darwin.mk,v 1.100 2020/10/09 17:43:48 jperkin Exp $
 #
 # Variable definitions for the Darwin operating system.
 
@@ -85,7 +85,6 @@ _USER_DEPENDS=		user-darwin>=20130712:../../sysutils/user_darwin
 _OPSYS_EMULDIR.darwin=	# empty
 
 _OPSYS_SYSTEM_RPATH?=	/usr/lib
-_OPSYS_LIB_DIRS?=	/usr/lib
 
 .if !defined(OSX_VERSION)
 OSX_VERSION!=		sw_vers -productVersion
@@ -118,6 +117,22 @@ _OPSYS_INCLUDE_DIRS?=	${OSX_SDK_PATH}/usr/include
 .  else
 PKG_FAIL_REASON+=	"No suitable Xcode SDK or Command Line Tools installed."
 .  endif
+.endif
+
+#
+# Newer macOS releases remove library files from the file system.  The only way
+# to test them is via dlopen(), which is obviously impractical for many things.
+#
+# The DARWIN_NO_SYSTEM_LIBS define turns off anything that can't reasonably
+# support this.  We also need to set _OPSYS_LIB_DIRS for find-libs.mk to look
+# in the SDK directory.  It may be that this can be set for all versions, but
+# for now keep the legacy behaviour and limit it to Big Sur onwards only.
+#
+.if ${OS_VERSION:R} >= 20
+DARWIN_NO_SYSTEM_LIBS=	# defined
+_OPSYS_LIB_DIRS?=	${OSX_SDK_PATH}/usr/lib
+.else
+_OPSYS_LIB_DIRS?=	/usr/lib
 .endif
 
 .if ${OS_VERSION:R} >= 6

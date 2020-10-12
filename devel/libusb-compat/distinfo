@@ -1,4 +1,4 @@
-$NetBSD: distinfo,v 1.5 2018/09/06 13:10:01 jperkin Exp $
+$NetBSD: distinfo,v 1.7 2020/10/10 12:32:24 mef Exp $
 
 SHA1 (libusb-compat-0.1.7.tar.gz) = bf6c214e4a64f62d42a03b2516658bc8f8f1bc00
 RMD160 (libusb-compat-0.1.7.tar.gz) = 58dd331bfe071e36fce0c83a3ac9f5d98654fcab

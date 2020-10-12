@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1351 2020/10/03 10:12:53 nia Exp $
+# $NetBSD: Makefile,v 1.1354 2020/10/08 17:39:31 schmonz Exp $
 #
 
 COMMENT=	Networking tools
@@ -365,6 +365,7 @@ SUBDIR+=	miredo
 SUBDIR+=	mirror
 SUBDIR+=	miruo
 SUBDIR+=	mitmproxy
+SUBDIR+=	mkvserver_mk2
 SUBDIR+=	mldonkey
 SUBDIR+=	mldonkey-gui
 SUBDIR+=	modpcap
@@ -902,6 +903,7 @@ SUBDIR+=	tigervnc
 SUBDIR+=	tightvnc
 SUBDIR+=	tightvncviewer
 SUBDIR+=	tinc
+SUBDIR+=	tinydyndns
 SUBDIR+=	tinyfugue
 SUBDIR+=	tkined
 SUBDIR+=	tn5250
