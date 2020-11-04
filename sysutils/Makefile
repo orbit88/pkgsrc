@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.905 2020/10/24 22:40:01 wiz Exp $
+# $NetBSD: Makefile,v 1.910 2020/11/04 12:34:55 nia Exp $
 #
 
 COMMENT=	System utilities
@@ -235,6 +235,8 @@ SUBDIR+=	gkrellm-server
 SUBDIR+=	gkrellm-share
 SUBDIR+=	gnome-menus
 SUBDIR+=	gnome-nds-thumbnailer
+SUBDIR+=	gnome-tracker
+SUBDIR+=	gnome-tracker-miners
 SUBDIR+=	gnome-vfs
 SUBDIR+=	gnome-vfsmm
 SUBDIR+=	gnuit
@@ -409,6 +411,7 @@ SUBDIR+=	mtx
 SUBDIR+=	munin-common
 SUBDIR+=	munin-master
 SUBDIR+=	munin-node
+SUBDIR+=	nautilus
 SUBDIR+=	nbase
 SUBDIR+=	ncdu
 SUBDIR+=	ndesk-dbus
@@ -428,6 +431,7 @@ SUBDIR+=	nvramtool
 SUBDIR+=	oak
 SUBDIR+=	onefetch
 SUBDIR+=	open-vm-tools
+SUBDIR+=	openipmi
 SUBDIR+=	openstack_init
 SUBDIR+=	openxenmanager
 SUBDIR+=	osname
@@ -837,6 +841,11 @@ SUBDIR+=	xuvmstat
 SUBDIR+=	ytree
 SUBDIR+=	zabbix
 SUBDIR+=	zabbix-frontend
+SUBDIR+=	zabbix50-agent
+SUBDIR+=	zabbix50-frontend
+SUBDIR+=	zabbix50-java
+SUBDIR+=	zabbix50-proxy
+SUBDIR+=	zabbix50-server
 SUBDIR+=	zidrav
 SUBDIR+=	znapzend
 
