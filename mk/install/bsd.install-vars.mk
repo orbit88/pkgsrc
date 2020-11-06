@@ -61,7 +61,7 @@ MAKEVARS+=	_MANCOMPRESSED _MANZ
 .if ${_PKGSRC_USE_CTF} == "yes"
 TOOLS_CREATE+=		ctfconvert
 TOOLS_PATH.ctfconvert=	${TOOLS_PLATFORM.ctfconvert}
-TOOLS_ARGS.ctfconvert?=	-i
+TOOLS_ARGS.ctfconvert?=	-i -s
 CTFCONVERT?=		ctfconvert
 CTF_FILES_SKIP?=	share/* ${PKGMANDIR}/*
 .endif
