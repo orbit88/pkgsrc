@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.910 2020/11/04 12:34:55 nia Exp $
+# $NetBSD: Makefile,v 1.913 2020/11/05 08:35:47 nia Exp $
 #
 
 COMMENT=	System utilities
@@ -63,6 +63,7 @@ SUBDIR+=	bkpupsd
 SUBDIR+=	boxbackup-client
 SUBDIR+=	boxbackup-server
 SUBDIR+=	brasero
+SUBDIR+=	broot
 SUBDIR+=	bsdec2-image-upload
 SUBDIR+=	bsdinstall
 SUBDIR+=	bsign
@@ -233,6 +234,8 @@ SUBDIR+=	gkrellm
 SUBDIR+=	gkrellm-est
 SUBDIR+=	gkrellm-server
 SUBDIR+=	gkrellm-share
+SUBDIR+=	gnome-characters
+SUBDIR+=	gnome-font-viewer
 SUBDIR+=	gnome-menus
 SUBDIR+=	gnome-nds-thumbnailer
 SUBDIR+=	gnome-tracker

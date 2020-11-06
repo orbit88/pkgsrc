@@ -1,6 +1,9 @@
-# $NetBSD: options.mk,v 1.15 2020/11/04 15:17:56 nia Exp $
+# $NetBSD: options.mk,v 1.17 2020/11/06 04:17:05 gutteridge Exp $
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.libreoffice
+
+# XXX: gtk3 option breaks scrollbars (on NetBSD, anyway).
+# (It's used for native "look and feel" integration for GTK3-based DEs.)
 PKG_SUPPORTED_OPTIONS=	java debug gtk3 cups ldap dbus
 PKG_SUGGESTED_OPTIONS=	cups ldap dbus
 
