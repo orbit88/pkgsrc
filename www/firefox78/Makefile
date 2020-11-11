@@ -1,12 +1,11 @@
-# $NetBSD: Makefile,v 1.8 2020/11/05 09:09:20 ryoon Exp $
+# $NetBSD: Makefile,v 1.10 2020/11/11 10:13:29 nia Exp $
 
 FIREFOX_VER=		${MOZ_BRANCH}${MOZ_BRANCH_MINOR}
 MOZ_BRANCH=		78.4
-MOZ_BRANCH_MINOR=	.0esr
+MOZ_BRANCH_MINOR=	.1esr
 
 DISTNAME=	firefox-${FIREFOX_VER}.source
 PKGNAME=	${DISTNAME:S/.source//:S/b/beta/:S/esr//:S/firefox-/firefox78-/}
-PKGREVISION=	1
 CATEGORIES=	www
 MASTER_SITES+=	${MASTER_SITE_MOZILLA:=firefox/releases/${FIREFOX_VER}/source/}
 EXTRACT_SUFX=	.tar.xz
@@ -36,10 +35,6 @@ LDFLAGS.DragonFly+=	-lplc4 -lnspr4
 LDFLAGS.FreeBSD+=	-lplc4 -lnspr4
 LDFLAGS.Linux+=		-lnspr4
 LDFLAGS.SunOS+=		-lm
-
-NOT_PAX_MPROTECT_SAFE+=	lib/${PKGBASE}/${MOZILLA}
-NOT_PAX_MPROTECT_SAFE+=	lib/${PKGBASE}/${MOZILLA}-bin
-NOT_PAX_MPROTECT_SAFE+=	lib/${PKGBASE}/plugin-container
 
 ALL_ENV+=		MOZ_APP_NAME=${MOZILLA}
 
@@ -84,7 +79,7 @@ MOZILLA_NAME=	Browser
 
 CKSUM_CRATES+=	third_party/rust/libc
 
-# patch-third__party_rust_libc_src_unix_bsd_netbsdlike_netbsd_mod.rs 
+# patch-third__party_rust_libc_src_unix_bsd_netbsdlike_netbsd_mod.rs
 CKSUMS+=	a3540eab4dbc52e006e84e288bad17e1dae3865fea49020e0ed8b5a7724a9532
 CKSUMS+=	5e58a2109f5eff0f497dfac150c161c1d517a2227b49e086da96c3d66522ac3a
 

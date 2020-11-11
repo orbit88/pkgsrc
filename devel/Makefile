@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.3274 2020/11/02 12:25:56 nia Exp $
+# $NetBSD: Makefile,v 1.3277 2020/11/10 17:45:05 nia Exp $
 #
 
 COMMENT=	Development utilities
@@ -763,6 +763,7 @@ SUBDIR+=	libgphoto2
 SUBDIR+=	libgsf
 SUBDIR+=	libgweather
 SUBDIR+=	libhandy
+SUBDIR+=	libhandy1
 SUBDIR+=	libhfs
 SUBDIR+=	libhid
 SUBDIR+=	libiberty
@@ -2315,8 +2316,6 @@ SUBDIR+=	py-hg-evolve
 SUBDIR+=	py-hg-fastimport
 SUBDIR+=	py-hg-git
 SUBDIR+=	py-hglib
-SUBDIR+=	py-hglist
-SUBDIR+=	py-hgnested
 SUBDIR+=	py-hgtools
 SUBDIR+=	py-hyperscan
 SUBDIR+=	py-hypothesis
