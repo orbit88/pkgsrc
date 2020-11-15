@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.10 2020/11/11 10:13:29 nia Exp $
+# $NetBSD: Makefile,v 1.12 2020/11/11 23:04:44 wiz Exp $
 
 FIREFOX_VER=		${MOZ_BRANCH}${MOZ_BRANCH_MINOR}
 MOZ_BRANCH=		78.4
@@ -6,6 +6,7 @@ MOZ_BRANCH_MINOR=	.1esr
 
 DISTNAME=	firefox-${FIREFOX_VER}.source
 PKGNAME=	${DISTNAME:S/.source//:S/b/beta/:S/esr//:S/firefox-/firefox78-/}
+PKGREVISION=	1
 CATEGORIES=	www
 MASTER_SITES+=	${MASTER_SITE_MOZILLA:=firefox/releases/${FIREFOX_VER}/source/}
 EXTRACT_SUFX=	.tar.xz
@@ -115,7 +116,9 @@ post-build:
 	  < ${FILESDIR}/desktop.in					\
 	  > ${WRKDIR}/desktop
 
-INSTALLATION_DIRS+=	share/applications share/pixmaps
+INSTALLATION_DIRS+=	share/applications
+INSTALLATION_DIRS+=	share/pixmaps
+
 post-install:
 	${ECHO} '#! /bin/sh' > ${DESTDIR}${PREFIX}/bin/${MOZILLA}
 	${ECHO} '${PREFIX}/lib/${MOZILLA}/${MOZILLA} "$$@"' >> \
